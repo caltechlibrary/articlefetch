@@ -1,0 +1,9 @@
+*.bak
+*.tmp
+*.swp
+*~
+*.csv
+*.pdf
+bin/*
+man/*
+dist/*
