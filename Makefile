@@ -8,7 +8,7 @@ PROJECT = articlefetch
 
 GIT_GROUP = caltechlibrary
 
-PROGRAMS = <PROGRAM_LISTS_GOES_HERE>
+PROGRAMS = articlefetch
 
 RELEASE_DATE = $(shell date +%Y-%m-%d)
 
