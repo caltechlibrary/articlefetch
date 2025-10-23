@@ -11,12 +11,12 @@ const (
 
 # SYNOPSIS
 
-{app_name} [OPTIONS] HOSTNAME QUERY_STRING
+{app_name} [OPTIONS] RDM_HOSTNAME CLPID
 
 # DESCRIPTION
 
-Take the HOSTNAME and QUERY_STRING values, retrieve the results from RDM and then using the results
-retrieve the PDFs.
+Use the CLPID provided to retreive a list of article from feeds, then use the
+RDM_HOSTNAME to retrieve the PDFs for the articles found.
 
 # OPTIONS
 
@@ -32,7 +32,7 @@ retrieve the PDFs.
 # EXAMPLE
 
 ~~~shell
-{app_name} authors.library.caltech.edu "Grubbs, Robert"
+{app_name} authors.library.caltech.edu Grubbs-R-H
 ~~~
 
 `

@@ -3,7 +3,8 @@ cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
 title: articlefetch
-abstract: "A client that will submit an search to an RDM instance and retrieve the articles in the results."
+abstract: "A client that will find the person ID provided in Caltech Library's feed then retrieve the list of articles
+before fetching the PDFs from our RDM instance."
 authors:
   - family-names: Doiel
     given-names: R. S.

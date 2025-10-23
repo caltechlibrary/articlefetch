@@ -1,4 +1,4 @@
-%articlefetch(1) user manual | version 0.0.0 0fd37b8
+%articlefetch(1) user manual | version 0.0.0 fd34fb1
 % R. S. Doiel
 % 2025-10-23
 
@@ -8,12 +8,12 @@ articlefetch
 
 # SYNOPSIS
 
-articlefetch [OPTIONS] HOSTNAME QUERY_STRING
+articlefetch [OPTIONS] RDM_HOSTNAME CLPID
 
 # DESCRIPTION
 
-Take the HOSTNAME and QUERY_STRING values, retrieve the results from RDM and then using the results
-retrieve the PDFs.
+Use the CLPID provided to retreive a list of article from feeds, then use the
+RDM_HOSTNAME to retrieve the PDFs for the articles found.
 
 # OPTIONS
 
@@ -29,7 +29,7 @@ retrieve the PDFs.
 # EXAMPLE
 
 ~~~shell
-articlefetch authors.library.caltech.edu "Grubbs, Robert"
+articlefetch authors.library.caltech.edu Grubbs-R-H
 ~~~
 
 

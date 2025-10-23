@@ -42,9 +42,9 @@ func main() {
 
 	// handle missing hostname and query
 	if len(args) != 2 {
-		fmt.Fprintf(os.Stderr, "missing hostname or query")
+		fmt.Fprintf(os.Stderr, "missing RDM hostname or clpid")
 		os.Exit(1)
 	}
-	hostname, query := args[0], args[1]
-	os.Exit(articlefetch.Run(os.Stdin, os.Stdout, os.Stderr, appName, hostname, query))
+	hostname, clpid:= args[0], args[1]
+	os.Exit(articlefetch.Run(os.Stdin, os.Stdout, os.Stderr, appName, hostname, clpid))
 }

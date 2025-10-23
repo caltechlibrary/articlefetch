@@ -14,7 +14,7 @@
   "dateCreated": "2025-10-23",
   "dateModified": "2025-10-23",
   "datePublished": "2025-10-23",
-  "description": "A client that will submit an search to an RDM instance and retrieve the articles in the results.",
+  "description": "A client that will find the person ID provided in Caltech Library's feed then retrieve the list of articles\nbefore fetching the PDFs from our RDM instance.",
   "name": "articlefetch",
   "version": "0.0.0",
   "developmentStatus": "concept",

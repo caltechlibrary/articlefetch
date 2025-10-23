@@ -1,6 +1,7 @@
 ---
 title: articlefetch
-abstract: "A client that will submit an search to an RDM instance and retrieve the articles in the results."
+abstract: "A client that will find the person ID provided in Caltech Library&#x27;s feed then retrieve the list of articles
+before fetching the PDFs from our RDM instance."
 authors:
   - family_name: Doiel
     given_name: R. S.
@@ -33,7 +34,8 @@ About this software
 
 
 
-A client that will submit an search to an RDM instance and retrieve the articles in the results.
+A client that will find the person ID provided in Caltech Library&#x27;s feed then retrieve the list of articles
+before fetching the PDFs from our RDM instance.
 
 
 - GitHub: <https://github.com/caltechlibrary/articlefetch>
