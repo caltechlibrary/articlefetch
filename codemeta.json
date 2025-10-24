@@ -12,13 +12,14 @@
     }
   ],
   "dateCreated": "2025-10-23",
-  "dateModified": "2025-10-23",
-  "datePublished": "2025-10-23",
+  "dateModified": "2025-10-24",
+  "datePublished": "2025-10-24",
   "description": "A client that will find the person ID provided in Caltech Library's feed then retrieve the list of articles\nbefore fetching the PDFs from our RDM instance.",
   "name": "articlefetch",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "developmentStatus": "concept",
   "issueTracker": "https://github.com/caltechlibrary/articlefetch/issues",
+  "releaseNotes": "working proof of concept",
   "copyrightYear": 2025,
   "copyrightHolder": "California Institute of Technology"
 }
