@@ -27,6 +27,8 @@ else
 		git commit -am "merging origin gh-pages"
 		echo "Pulling changes from ${WORKING_BRANCH} info gh-pages"
 		git pull origin "${WORKING_BRANCH}"
+		echo "build website"
+		make -f website.mak
 		echo "Merging changes from ${WORKING_BRANCH}"
 		git commit -am "merging ${WORKING_BRANCH} with gh-pages"
 		echo "Pushing changes up and publishing"
