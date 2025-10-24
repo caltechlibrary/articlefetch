@@ -1,11 +1,11 @@
 #!/bin/sh
-# generated with CMTools 0.0.0 e1aa0c9
+# generated with CMTools 0.0.1 0a05b3a
 
 #
 # Set the package name and version to install
 #
 PACKAGE="articlefetch"
-VERSION="0.0.0"
+VERSION="0.0.1"
 GIT_GROUP="caltechlibrary"
 RELEASE="https://github.com/$GIT_GROUP/$PACKAGE/releases/tag/v$VERSION"
 if [ "$PKG_VERSION" != "" ]; then

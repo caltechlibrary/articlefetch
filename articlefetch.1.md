@@ -1,6 +1,6 @@
-%articlefetch(1) user manual | version 0.0.0 e1aa0c9
+%articlefetch(1) user manual | version 0.0.1 0a05b3a
 % R. S. Doiel
-% 2025-10-23
+% 2025-10-24
 
 # NAME
 

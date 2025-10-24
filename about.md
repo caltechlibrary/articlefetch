@@ -10,20 +10,20 @@ authors:
 
 
 repository_code: https://github.com/caltechlibrary/articlefetch
-version: 0.0.0
+version: 0.0.1
 
 
 
 
-date_released: 2025-10-23
+date_released: 2025-10-24
 ---
 
 About this software
 ===================
 
-## articlefetch 0.0.0
+## articlefetch 0.0.1
 
-
+working proof of concept
 
 ### Authors
 
