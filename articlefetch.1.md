@@ -1,4 +1,4 @@
-%articlefetch(1) user manual | version 0.0.0 fd34fb1
+%articlefetch(1) user manual | version 0.0.0 e1aa0c9
 % R. S. Doiel
 % 2025-10-23
 

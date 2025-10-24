@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"io"
 	"os"
-	"strings"
+	"path/filepath"
+	//"strings"
 	"time"
 )
 
@@ -17,17 +18,25 @@ func Run(in io.Reader, out io.Writer, eout io.Writer, appName string, hostname s
 		return 1
 	}
 	tot := len(rdmIds)
+	t0 := time.Now()
+	iTime := time.Now()
+	reportProgress := false
 	retrieved := 0
-	fmt.Printf("retrieving %d records\n", tot)
-	pdfToRetrieve := []string{}
+	waitTime := 5 * time.Second
+	fmt.Printf("processing %d records\n", tot)
 	for i, id := range rdmIds {
+		if i > 0 {
+			if iTime, reportProgress = CheckWaitInterval(iTime, waitTime); reportProgress {
+				fmt.Printf("%s | next id %q\n", ProgressETA(t0, i, tot), id)
+				time.Sleep(waitTime)
+			}
+		}
 		rdmUrl := RdmRecordURL(hostname, id)
-		src, duration, err := RdmFetchJSON(rdmUrl)
+		src, err := RdmFetchJSON(rdmUrl)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "%s\n", err)
 			continue
 		}
-		time.Sleep(duration)
 
 		pdfUrls, err := RdmPdfURLs(src)
 		if err != nil {
@@ -35,16 +44,30 @@ func Run(in io.Reader, out io.Writer, eout io.Writer, appName string, hostname s
 			continue
 		}
 		if len(pdfUrls) > 0 {
-			fmt.Printf("DEBUG pdfUrls (%d)\n\t%+v\n", len(pdfUrls), strings.Join(pdfUrls, "\n\t"))
-			pdfToRetrieve = append(pdfToRetrieve, pdfUrls...)
-			time.Sleep(10 * time.Second)
+			// Make a directory for {clpid}/{rdmid}
+			saveDir := filepath.Join(clpid, id)
+			if _, err := os.Stat(saveDir); err != nil {
+				os.MkdirAll(saveDir, 0775)
+			}
+			// For each PDF create a directory for the RDM record id
+			for i, pdfUrl := range pdfUrls {
+				fName, err := RdmGetFilenameFromContentURL(pdfUrl)
+				if err != nil {
+					fmt.Fprintf(os.Stderr, "failed to extract filename (file no. %d for %s) %s, %s\n", i, id, pdfUrl, err)
+				}
+				// Retrieve and write out the PDF to dir
+				if src, err := RdmRetrieveFile(pdfUrl); err != nil {
+					fmt.Fprintf(os.Stderr, "failed to retrieve file %s, %s\n", pdfUrl, err)
+				} else {
+					fName = filepath.Join(saveDir, fName)
+					if err := os.WriteFile(fName, src, 0664); err != nil {
+						fmt.Fprintf(os.Stderr, "failed to write %s, %s\n", fName, err)
+					}
+				}
+			}
 		}
 		retrieved += 1
-		if (i % 5) == 0{
-			fmt.Printf("%d/%d processed\n", i+1, tot)
-		}
 	}
-	fmt.Printf("%d/%d retrieved\n", retrieved, tot)
-	fmt.Printf("Retrieve the following URL:\n\n%s\n\n", strings.Join(pdfToRetrieve, "\n\t"))
+	fmt.Printf("%d of %d records processed\n", retrieved, tot)
 	return 0
 }
