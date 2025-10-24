@@ -25,19 +25,26 @@
 </nav>
 <section>
 <h1 id="articlefetch">articlefetch</h1>
-<p>A client that will submit an search to an RDM instance and retrieve
-the articles in the results.</p>
+<p>This is a web client that is intended to harvest PDFs from an RDM
+repository (e.g. CaltechAUTHORS) using the list of articles for an
+individual available &lt;feeds.library.caltech.edu&gt;. It first
+retrieves the JSON file for articles from feeds, then uses that to
+retrieve the records from RDM using the metadata files object. This then
+is parsed and used to retrieve the specific PDFs associated with that
+record.</p>
+<p>It was created as a re-usable tool as a means of allowing content to
+be aggregated for use in projects of Caltech Archives.</p>
 <h3 id="authors">Authors</h3>
 <ul>
 <li>Doiel, R. S.</li>
 </ul>
 <h2 id="related-resources">Related resources</h2>
 <ul>
-<li><p><a
+<li><a
 href="https://github.com/caltechlibrary/articlefetch/issues">Getting
-Help, Reporting bugs</a></p></li>
-<li><p><a href="INSTALL.html">Installation</a></p></li>
-<li><p><a href="about.html">About</a></p></li>
+Help, Reporting bugs</a></li>
+<li><a href="INSTALL.html">Installation</a></li>
+<li><a href="about.html">About</a></li>
 </ul>
 </section>
 <footer-global></footer-global>

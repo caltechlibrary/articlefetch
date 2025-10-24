@@ -27,10 +27,10 @@
 <h1 id="name">NAME</h1>
 <p>articlefetch</p>
 <h1 id="synopsis">SYNOPSIS</h1>
-<p>articlefetch <a href="#options">OPTIONS</a> HOSTNAME QUERY_STRING</p>
+<p>articlefetch <a href="#options">OPTIONS</a> RDM_HOSTNAME CLPID</p>
 <h1 id="description">DESCRIPTION</h1>
-<p>Take the HOSTNAME and QUERY_STRING values, retrieve the results from
-RDM and then using the results retrieve the PDFs.</p>
+<p>Use the CLPID provided to retreive a list of article from feeds, then
+use the RDM_HOSTNAME to retrieve the PDFs for the articles found.</p>
 <h1 id="options">OPTIONS</h1>
 <dl>
 <dt>-help</dt>
@@ -47,7 +47,7 @@ display license
 </dd>
 </dl>
 <h1 id="example">EXAMPLE</h1>
-<pre class="shell"><code>articlefetch authors.library.caltech.edu &quot;Grubbs, Robert&quot;</code></pre>
+<pre class="shell"><code>articlefetch authors.library.caltech.edu Grubbs-R-H</code></pre>
 </section>
 <footer-global></footer-global>
 </body>

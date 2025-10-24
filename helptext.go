@@ -15,8 +15,11 @@ const (
 
 # DESCRIPTION
 
-Use the CLPID provided to retreive a list of article from feeds, then use the
-RDM_HOSTNAME to retrieve the PDFs for the articles found.
+Use the CLPID is used to retrieve a list of articles from <feeds.library.caltech.edu>. The
+resulting list of articles is used to retrieve the metadata for the articles from the RDM
+repository indicated by RDM_HOSTNAME. For each article the metadata files object is retrieved
+and any PDFs listed are then harvested and stored in a directory structure forms from the
+CLPID, the RDM record id and the PDF name. 
 
 # OPTIONS
 
@@ -34,6 +37,9 @@ RDM_HOSTNAME to retrieve the PDFs for the articles found.
 ~~~shell
 {app_name} authors.library.caltech.edu Grubbs-R-H
 ~~~
+
+This results in a directory tree under Grubbs-R-H of RDM record ids that hold
+PDFs associated with the record.
 
 `
 )
